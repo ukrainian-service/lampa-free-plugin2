@@ -7,7 +7,7 @@
                 name: 'Eneyida',
                 url: 'https://eneyida.tv/',
                 parser: function (query) {
-                    return `${this.url}?do=search&q=${encodeURIComponent(query)}`;
+                    return `${this.url}?do=search&subaction=search&q=${encodeURIComponent(query)}`;
                 }
             },
             {
@@ -74,6 +74,13 @@
                     this.append(item);
                 });
             };
+        });
+
+        Lampa.Settings.add({
+            group: 'free_plugin',
+            title: 'Безкоштовний плагін',
+            component: 'free_plugin',
+            onClick: () => Lampa.Noty.show('Плагін активовано!')
         });
     }
 
